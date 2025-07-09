@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Portal de Notícias</title> <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Portal de notícias</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" title="Ir para a página inicial">Início</a>
+                    </li>
+                    <li>
+                        <a href="previsao.html" title="Ir para a seção de previsão do tempo">Previsão do tempo</a>
+                    </li>
+                    <li>
+                        <a href="agenda-cultural.html" title="Ir para a seção de agenda cultural">Agenda Cultural</a>
+                    </li>
+                    <li>
+                        <a href="contato.html" title="Ir para a seção de contato">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="quem-somos" class="container">
+            <h2>Quem Somos</h2> <p>Somos um portal de notícias dedicado a informar, conectar e valorizar as cidades de Recife, Olinda, Jaboatão dos Guararapes e toda a região metropolitana. Nosso compromisso é levar até você conteúdos relevantes, atualizados e com a cara da nossa gente.</p>
+            <p>Aqui, você encontra reportagens sobre cultura, eventos, serviços, cidadania, clima, curiosidades locais e tudo o que movimenta o dia a dia das nossas comunidades. Acreditamos no poder da informação para transformar realidades e fortalecer os laços entre os moradores da nossa região.</p>
+            <p>Nosso espaço também é colaborativo: queremos ouvir você! Envie sugestões, compartilhe histórias e participe da construção de um jornalismo mais próximo e participativo.</p>
+            <p>Seja bem-vindo ao seu portal de notícias local. Juntos, damos voz ao que realmente importa.</p>
+        </section>
+
+        <section id="contato" class="container">
+            <h2>Entre em contato</h2> <p>Este espaço é dedicado para você expressar suas opiniões, sugerir notícias ou enviar qualquer mensagem que deseje compartilhar conosco.</p>
+            
+            <form name="meu_form">
+                <div>
+                    <label for="nomeid">Nome</label>
+                    <input type="text" id="nomeid" placeholder="Fulano da Silva" required name="nome" />
+                </div>
+                
+                <div>
+                    <label for="foneid">Fone</label>
+                    <input type="tel" id="foneid" placeholder="(xx)x-xxxx-xxxx" name="fone" />
+                </div>
+                
+                <div>
+                    <label for="emailid">Email</label>
+                    <input type="email" id="emailid" placeholder="fulano@mail.com" name="email" />
+                </div>
+                
+                <div>
+                    <label for="opiniao">Deixe sua opinião</label> <textarea id="opiniao" placeholder="Sua mensagem..."></textarea>
+                </div>
+
+                <input type="submit" class="enviar" onclick="Enviar();" value="Enviar" />
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <hr> <div class="container">
+            <p>&copy; 2025 Portal de Notícias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

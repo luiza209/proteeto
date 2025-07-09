@@ -1,0 +1,359 @@
+/* === VARIÁVEIS CSS === */
+/* Definimos aqui cores e fontes reutilizáveis para facilitar manutenção */
+:root {
+    --cor-fundo-header: #2f3640;            /* Cor de fundo do cabeçalho */
+    --cor-texto-claro: #f5f6fa;             /* Cor clara para textos no header e footer */
+    --cor-verde-previsao: #009432;          /* Cor do botão da seção Previsão de tempo */
+    --cor-laranja-agenda: #ff9f1a;        /* Cor do botão da seção Agenda Cultural */
+    --cor-azul-contato: #0508b1;             /* Cor do botão da seção Formulário  */
+    --cor-fundo-body: #f4f4f4;              /* Cor de fundo geral do site */
+     --cor-fundo-previsao-claro: rgba(0, 255, 0, 0.1); /* Nova variável */
+    --cor-fundo-agenda-claro: #f8f59f; /* Nova variável */
+
+    --fonte-principal: 'Inter', sans-serif; /* Se Inter for a principal */
+    --fonte-titulos: 'Manufacturing Consent', sans-serif; /* Se for para títulos específicos */
+
+}
+
+/* === RESET === */
+/* Remove margens e preenchimentos padrão dos navegadores */
+* {
+    box-sizing: border-box; /* Inclui padding e border no cálculo de largura/altura */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo global do corpo da página */
+body {
+    font-family: var(--fonte-principal);    /* Fonte aplicada ao site todo */
+    background-color: var(--cor-fundo-body);/* Fundo cinza claro */
+    font-size: 16px;                         /* Tamanho base da fonte */
+    line-height: 1.5;                        /* Espaçamento entre linhas */
+}
+
+/* === CABEÇALHO === */
+body > header {
+    background-color: var(--cor-fundo-header);
+    padding: 16px 0;
+    color: var(--cor-texto-claro);
+}
+
+/* Layout flexível para alinhar título e menu */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Itens de menu em linha */
+header li {
+    display: inline;
+    font-weight: bold;
+    margin-left: 16px;
+}
+
+/* Estilo dos links de navegação */
+header li a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+}
+
+/* Efeitos ao interagir com os links do menu */
+header li a:hover,
+header li a:focus,
+header li a:active {
+    text-decoration: underline;
+    color: #00ff99;
+    border-bottom: 2px solid #00ff99;
+}
+
+/* === CONTAINER CENTRAL === */
+/* Limita o conteúdo a uma largura máxima e centraliza */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+/* === SEÇÕES DO SITE === */
+section {
+    padding: 32px 0; /* Espaço acima e abaixo das seções */
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+/* === LISTA DE ARTIGOS === */
+/* Flexbox para organizar os artigos lado a lado */
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Espaço entre artigos */
+}
+
+/* Estilo visual de cada artigo (card) */
+.articles article {
+    width: 30%;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Estilo das imagens dentro dos artigos */
+.articles article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;   /* Corta a imagem proporcionalmente para caber no espaço */
+    border-radius: 4px;
+    background-color: #ddd; /* Cor de fundo se a imagem não carregar */
+}
+
+/* Título da notícia */
+.articles article h3 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+/* Data da publicação */
+.articles article time {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Fonte para parágrafos e botões */
+.articles article p,
+.articles article a {
+    font-family: var(--fonte-principal);
+}
+
+/* Botão \"Ler mais\" */
+.articles article a {
+    background-color: blue;
+    color: #fff;
+    padding: 8px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+    transition: background-color 0.3s; /* Suaviza mudanças de cor */
+}
+
+/* Efeito hover do botão */
+.articles article a:hover {
+    text-decoration: underline;
+}
+
+.articles article:last-child {
+    margin-bottom: 0;
+}
+
+/* === CORES DE FUNDO E BOTÕES POR SEÇÃO === */
+#previsao {
+    background-color: var(--cor-fundo-previsao-claro);
+}
+
+#previsao .articles article a {
+    background-color: var(--cor-verde-previsao);
+}
+
+#agenda {
+    background-color: var(--cor-fundo-agenda-claro);
+}
+
+#agenda .articles article a {
+    background-color: var(--cor-fundo-agenda);
+}
+
+.margin-fix {
+    height: 1px; /* impede o colapso visual com o footer */
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* controla o espaçamento entre os cards */
+}
+
+.articles article {
+    margin-bottom: 0; /* evita conflitos verticais */
+}
+
+/* === FORMULÁRIO DE CONTATO === */
+form p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+form {
+    
+    font-family: Verdana,Tahoma,sans-serif;
+    font-size: 15px;
+    background-color: rgb(190, 169, 169);
+    max-width: 500px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif; 
+    margin-bottom: 20px;
+    margin-left: 20px;
+    color: #66FFFF;
+    text-shadow: 5px 5px 5px black;
+}
+
+input, textarea {
+    width: 200px;
+    padding: 10px;
+    color: black;
+    margin-left: 20px;
+    margin-top: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid;
+}
+
+input:hover, textarea:hover, input:focus, textarea:focus {
+    border-color: #000066;
+    box-shadow: 5px 0px 9px #FFFF00;
+    background-color: #66FFFF;
+    color: black;
+    font-weight: bold;
+}
+
+#contato form { /* Assumindo que o formulário estará dentro de uma seção #contato */
+    font-family: var(--fonte-corpo); /* Usar variável de fonte */
+    font-size: 1rem;
+    background-color: #f0f0f0; /* Use uma cor de variável ou mais clara */
+    max-width: 500px;
+    margin: 0 auto; /* Centraliza o formulário */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contato h2 { /* Título para a seção de contato */
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#contato form label {
+    display: block; /* Garante que o label ocupe toda a largura */
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333; /* Cor mais legível */
+    font-weight: bold;
+}
+
+#contato form input[type="text"],
+#contato form input[type="email"],
+#contato form textarea {
+    width: 100%; /* Ocupa toda a largura do container do formulário */
+    max-width: 100%; /* Garante que não ultrapasse */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    box-sizing: border-box; /* Inclui padding no cálculo de width */
+}
+
+#contato form input:hover,
+#contato form textarea:hover,
+#contato form input:focus,
+#contato form textarea:focus {
+    border-color: var(--cor-azul-contato); /* Usar variável de cor do botão de contato */
+    box-shadow: 0px 0px 5px var(--cor-azul-contato);
+    outline: none; /* Remove o outline padrão ao focar */
+}
+
+#contato form textarea {
+    min-height: 100px; /* Altura mínima para o textarea */
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+#contato form .enviar {
+    background-color: var(--cor-azul-contato); /* Usar variável */
+    color: var(--cor-texto-claro);
+    height: 45px;
+    width: auto; /* Adapta-se ao conteúdo */
+    padding: 0 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none; /* Geralmente botões não precisam de borda */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#contato form .enviar:hover {
+    background-color: #04069c; /* Um tom ligeiramente mais escuro */
+}
+
+.enviar {
+    background-color: #66FFFF;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid;
+    color: black;
+}
+
+textarea {
+    width: 400px;
+    height: 120px;
+    line-height: 20px;
+    max-width: 400px;
+}
+
+form label {
+    margin-left: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--cor-fundo-header);
+    color: var(--cor-texto-claro);
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* === RESPONSIVIDADE PARA TELAS PEQUENAS === */
+@media (max-width: 768px) {
+    /* Empilha os artigos em coluna no celular */
+    .articles {
+        flex-direction: column;
+    }
+
+    /* Ocupa toda a largura no celular */
+    .articles article {
+        width: 100%;
+    }
+
+    /* Empilha o menu e o título no topo */
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        padding-top: 8px;
+    }
+
+    /* Menu vertical */
+    header li {
+        display: block;
+        margin: 8px 0;
+    }
+}
